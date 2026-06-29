@@ -1,39 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
 
-<title>Video</title>
+<meta name="viewport"
+content="width=device-width,
+initial-scale=1.0,
+maximum-scale=1.0,
+user-scalable=no">
 
-<meta property="og:title" content="Watch Video">
-<meta property="og:description" content="Watch this video">
+<title>Watch Viral Video</title>
+
+<!-- FACEBOOK / WHATSAPP PREVIEW -->
 <meta property="og:type" content="website">
-<meta property="og:url" content="YOUR_PAGE_URL">
-<meta property="og:image" content="YOUR_IMAGE_URL">
+<meta property="og:title" content="Watch Viral Video 🔥">
+<meta property="og:description" content="Trending fullscreen viral video">
+<meta property="og:url" content="https://yourdomain.com">
 
+<!-- CHANGE IMAGE -->
+<meta property="og:image" content="https://yourdomain.com/preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- TWITTER -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Watch Viral Video 🔥">
+<meta name="twitter:description" content="Trending fullscreen viral video">
+<meta name="twitter:image" content="https://yourdomain.com/preview.jpg">
 
 <style>
 
 *{
+    margin:0;
+    padding:0;
     box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
 }
 
-html,body{
-    margin:0;
+html,
+body{
     width:100%;
     height:100%;
-    background:#000;
     overflow:hidden;
+    background:#000;
+    font-family:Arial,sans-serif;
 }
 
-.video-box{
-    width:100vw;
+.video-container{
+    position:relative;
+    width:100%;
     height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    overflow:hidden;
     background:#000;
+    cursor:pointer;
 }
 
 video{
@@ -43,33 +63,218 @@ video{
     background:#000;
 }
 
+.loader{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:#fff;
+    z-index:10;
+    font-size:18px;
+    font-weight:bold;
+}
+
+.overlay{
+    position:absolute;
+    left:15px;
+    bottom:90px;
+    color:#fff;
+    z-index:5;
+    width:70%;
+}
+
+.username{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+.caption{
+    font-size:14px;
+    line-height:1.5;
+}
+
+.right-icons{
+    position:absolute;
+    right:10px;
+    bottom:95px;
+    z-index:5;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    color:#fff;
+}
+
+.icon{
+    text-align:center;
+    font-size:13px;
+}
+
+.icon img{
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    object-fit:cover;
+    border:2px solid #fff;
+}
+
+.icon span{
+    display:block;
+    margin-top:5px;
+}
+
+.bottom-bar{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:60px;
+    background:#111;
+    border-top:1px solid #222;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    color:#fff;
+    z-index:20;
+}
+
+.bottom-bar div{
+    font-size:13px;
+}
+
+.waustat-box{
+    position:fixed;
+    top:10px;
+    left:10px;
+    z-index:9999;
+}
+
+@media(max-width:768px){
+
+    .overlay{
+        width:75%;
+        bottom:85px;
+    }
+
+    .username{
+        font-size:16px;
+    }
+
+    .caption{
+        font-size:13px;
+    }
+
+    .icon img{
+        width:45px;
+        height:45px;
+    }
+
+}
+
 </style>
-
 </head>
-
 
 <body>
 
+<div class="video-container" id="videoContainer">
 
-<div class="video-box">
+    <!-- LOADER -->
+    <div class="loader" id="loader">
+        Loading...
+    </div>
 
-<video id="myVideo" 
-       controls 
-       playsinline 
-       webkit-playsinline>
+    <!-- VIDEO -->
+    <video
+        id="video"
+        autoplay
+        muted
+        playsinline
+        webkit-playsinline
+        preload="auto"
+    >
+        <source
+        src="https://cdn.videy.co/Qa2fL7Ui1.mp4"
+        type="video/mp4">
+    </video>
 
-<source src="https://cdn.videy.co/KI28JC421.mp4" type="video/mp4">
+    <!-- TEXT -->
+    <div class="overlay">
 
-</video>
+        <div class="username">
+            @viral_video
+        </div>
+
+        <div class="caption">
+            Watch Fullscreen Viral Video 🔥
+        </div>
+
+    </div>
+
+    <!-- RIGHT ICONS -->
+    <div class="right-icons">
+
+        <div class="icon">
+            <img src="https://i.pravatar.cc/100?img=12">
+        </div>
+
+        <div class="icon">
+            ❤️
+            <span>48K</span>
+        </div>
+
+        <div class="icon">
+            💬
+            <span>6K</span>
+        </div>
+
+        <div class="icon">
+            🔗
+            <span>Share</span>
+        </div>
+
+    </div>
 
 </div>
 
+<!-- BOTTOM MENU -->
+<div class="bottom-bar">
 
+    <div>🏠 Home</div>
+    <div>🔍 Search</div>
+    <div>➕ Upload</div>
+    <div>📩 Inbox</div>
+    <div>👤 Profile</div>
+
+</div>
+
+<!-- WAUSTAT -->
+<div class="waustat-box">
+
+<script id="_wauyba">
+var _wau = _wau || [];
+_wau.push(["small", "zw1gvsj7ua", "yba"]);
+</script>
+
+<script async src="//waust.at/s.js"></script>
+
+</div>
 
 <script>
 
-const video = document.getElementById("myVideo");
+const video = document.getElementById("video");
+const loader = document.getElementById("loader");
+const container = document.getElementById("videoContainer");
 
+/* AUTO PLAY */
+video.play().catch(() => {});
+
+/* HIDE LOADER */
+video.addEventListener("loadeddata", () => {
+
+    loader.style.display = "none";
+
+});
 
 /* ONE USER = ONE TIME GOOGLE REDIRECT */
 
@@ -95,25 +300,7 @@ video.addEventListener("ended", () => {
 
 });
 
-</div>
-
-<!-- WAUSTAT -->
-<div class="waustat-box">
-
-<script id="_wauyba">
-var _wau = _wau || [];
-_wau.push(["small", "zw1gvsj7ua", "yba"]);
 </script>
-
-<script async src="//waust.at/s.js"></script>
-
-</div>
-
-<script>
-
-
-<script async src="https://waust.at/s.js"></script>
-
 
 </body>
 </html>
