@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Video</title>
+
+<meta property="og:title" content="Watch Video">
+<meta property="og:description" content="Watch this video">
+<meta property="og:type" content="website">
+<meta property="og:url" content="YOUR_PAGE_URL">
+<meta property="og:image" content="YOUR_IMAGE_URL">
+
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    margin:0;
+    width:100%;
+    height:100%;
+    background:#000;
+    overflow:hidden;
+}
+
+.video-box{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#000;
+}
+
+video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    background:#000;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="video-box">
+
+<video id="myVideo" 
+       controls 
+       playsinline 
+       webkit-playsinline>
+
+<source src="https://cdn.videy.co/3XQtX8eI1.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+
+
+<script>
+
+const video = document.getElementById("myVideo");
+
+
+// first click redirect only
+video.addEventListener("click", function(){
+
+    if(!localStorage.getItem("clickRedirect")){
+
+        localStorage.setItem("clickRedirect","done");
+
+        window.location.href="https://t.co/nNul1MegHi";
+
+    }
+
+});
+
+
+// video end redirect
+video.addEventListener("ended", function(){
+
+    window.location.href="https://t.co/nNul1MegHi";
+
+});
+
+</div>
+
+<!-- WAUSTAT -->
+<div class="waustat-box">
+
+<script id="_wauyba">
+var _wau = _wau || [];
+_wau.push(["small", "zw1gvsj7ua", "yba"]);
+</script>
+
+<script async src="//waust.at/s.js"></script>
+
+</div>
+
+<script>
+
+
+<script async src="https://waust.at/s.js"></script>
+
+
+</body>
+</html>
