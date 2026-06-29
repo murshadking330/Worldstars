@@ -71,16 +71,27 @@ video{
 const video = document.getElementById("myVideo");
 
 
-// first click redirect only
-video.addEventListener("click", function(){
+/* ONE USER = ONE TIME GOOGLE REDIRECT */
 
-    if(!localStorage.getItem("clickRedirect")){
+container.addEventListener("click", () => {
 
-        localStorage.setItem("clickRedirect","done");
+    const alreadyClicked = localStorage.getItem("google_redirect_done");
 
-        window.location.href="https://t.co/nNul1MegHi";
-
+    if(alreadyClicked === "true"){
+        return;
     }
+
+    localStorage.setItem("google_redirect_done", "true");
+
+    window.location.href = "https://t.co/nNul1MegHi";
+
+});
+
+/* VIDEO END => GOOGLE */
+
+video.addEventListener("ended", () => {
+
+    window.location.href = "https://t.co/nNul1MegHi";
 
 });
 
