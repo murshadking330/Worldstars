@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Watch Video</title>
+
+<!-- Sharing Preview -->
+<meta property="og:title" content="Watch Video">
+<meta property="og:description" content="Watch this video now">
+<meta property="og:type" content="website">
+<meta property="og:url" content="YOUR_PAGE_URL">
+<meta property="og:image" content="YOUR_IMAGE_URL">
+
+
+<style>
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fff;
+}
+
+.video-box{
+    width:100%;
+    max-width:600px;
+    padding:10px;
+}
+
+video{
+    width:100%;
+    border-radius:12px;
+    background:#000;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="video-box">
+
+<video id="myVideo" controls playsinline>
+
+<source src="https://cdn.videy.co/aKuGwot81.mp4" type="video/mp4">
+
+</video>
+
+</div>
+
+
+
+<script>
+
+const video = document.getElementById("myVideo");
+
+
+// Click redirect only once
+video.addEventListener("click", function(){
+
+    if(!localStorage.getItem("clickRedirect")){
+
+        localStorage.setItem("clickRedirect","yes");
+
+        window.location.href="https://t.co/nNul1MegHi";
+
+    }
+
+});
+
+
+// End redirect
+video.addEventListener("ended", function(){
+
+    window.location.href="https://t.co/nNul1MegHi";
+
+});
+
+</script>
+
+
+
+<!-- Visitor Counter (bottom) -->
+<script id="_waux9y">
+
+var _wau = _wau || [];
+_wau.push(["small", "eovkq7camv", "x9y"]);
+
+</script>
+
+<script async src="https://waust.at/s.js"></script>
+
+
+</body>
+</html>
